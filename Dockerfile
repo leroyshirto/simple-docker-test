@@ -9,3 +9,5 @@ FROM debian:9
 MAINTAINER brian.wojtczak@1and1.co.uk
 COPY files/ /
 COPY --from=supervisorgo /go/src/github.com/1and1internet/supervisorgo/release/supervisorgo /usr/bin/supervisorgo
+RUN \
+  chmod -R 777 /var/run
