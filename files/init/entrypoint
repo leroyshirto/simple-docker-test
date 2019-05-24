@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+run-parts --exit-on-error -v --report /hooks/entrypoint-pre.d
+
+
+ulimit_core_re="^([0-9]+|unlimited)$"
+[[ $ULIMIT_CORE =~ $ulimit_core_re ]] && echo "Setting: ulimit -c '$ULIMIT_CORE'" && ulimit -c $ULIMIT_CORE
+
+exec "$@"

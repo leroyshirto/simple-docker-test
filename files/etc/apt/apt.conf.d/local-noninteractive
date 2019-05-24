@@ -1,0 +1,15 @@
+
+APT {
+  Get {
+    Assume-Yes "true";
+    Fix-Broken "true";
+	Show-Upgraded "true";
+  };
+};
+
+Dpkg::Options {
+   "--force-confdef";
+   "--force-confold";
+}
+
+   

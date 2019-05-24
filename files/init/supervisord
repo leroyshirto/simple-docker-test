@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+run-parts --exit-on-error -v --report /hooks/supervisord-pre.d
+
+exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf -e ${SUPERVISORD_LOGLEVEL:-error}
