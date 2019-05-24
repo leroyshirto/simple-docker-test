@@ -1,1 +1,1 @@
-FROM 1and1internet:ubuntu-18
+FROM 1and1internet/debian-9
